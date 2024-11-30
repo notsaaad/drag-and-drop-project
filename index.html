@@ -1,0 +1,487 @@
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="CSS/kanban.css">
+        <link rel="stylesheet" href="CSS/master.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
+        integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/theme.min.css"
+        integrity="sha512-lfR3NT1DltR5o7HyoeYWngQbo6Ec4ITaZuIw6oAxIiCNYu22U5kpwHy9wAaN0vvBj3U6Uy2NNtAfiaKcDxfhTg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+        integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/black-tie/jquery-ui.min.css"
+        integrity="sha512-bVIVlufxYIog6AKd3iWWUpQ/OSA0Zk4h0g1d2X42010UmLrpF9fPkNyQYMZSb+pt85IwdJIbGEiHWg3d5chHNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="jkanban.min.css">
+    <script src="jkanban.min.js"></script>
+
+</head>
+
+<body>
+    <div id="oversizes_mapping_tab" data-tab="oversizes-mapping" class="tab-pane fade active in">
+
+
+    <div>
+
+        <div id="page-wrapper-loader" class="col-xs-12 text-center hidden">
+            <i class="fa fa-spinner fa-pulse"></i>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="alert-wrapper">
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div id="oversizes_mapping_tab" class="tab-pane active">
+            <!-- Inner Tabs -->
+            <ul id="inner_project_tabs" class="nav nav-tabs" style="overflow-x: auto;">
+                <li class="inner-tab simplification-tab">
+                    <a data-toggle="tab" href="#simplification_content" aria-expanded="false">Simplification</a>
+                </li>
+                <li class="inner-tab course-planning-tab active">
+                    <a data-toggle="tab" href="#course_planning_content" aria-expanded="true">Course Planning</a>
+                </li>
+                <li class="inner-tab finalization-tab">
+                    <a data-toggle="tab" href="#finalization_content">Finalization</a>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <div id="simplification_content" class="tab-pane fade">
+                    <h3>Simplification Content</h3>
+                    <div id="simplification" class="tab-content">
+                        <h3>Simplification</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Unit</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-split" data-id="">Split</button>
+                                        <button class="btn btn-sm btn-merge" data-id="">Merge</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-split" data-id="">Split</button>
+                                        <button class="btn btn-sm btn-merge" data-id="">Merge</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-split" data-id="">Split</button>
+                                        <button class="btn btn-sm btn-merge" data-id="">Merge</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div id="course_planning_content" class="tab-pane fade active in">
+                    <h3>Course Planning Content</h3>
+                    <!-- Kanban Board -->
+                    <div id="kanban-container">
+                        <div id="kanban-right" style="display: flex; flex-direction: column; gap: 10px;">
+                            <div class="form-group has-feedback">
+                                <input type="search" id="search-remaining-items" class="form-control"
+                                    placeholder="Search remaining positions..." aria-controls="remaining-items">
+                                <i class="fa fa-search form-control-feedback"></i>
+                                <i class="fa fa-microphone microphone-icon"></i>
+                            </div>
+                            <div id="remaining-items" class="Aside">
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="1" data-eid="10920-1"
+                                    data-item-no="1" data-description="Stahlrohrgerüst Gr. 3, 2KN/m²"
+                                    data-qty="200.00" data-unit="m²" data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    Stahlrohrgerüst Gr. 3, 2KN/m² </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    1
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">200.00</span> / 200.00 m²
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="2" data-eid="10920-2"
+                                    data-item-no="2" data-description="FG &amp;gt;40 in LK 3" data-qty="100.00"
+                                    data-unit="m³" data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    FG &amp;gt;40 in LK 3 </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    2
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">100.00</span> / 100.00 m³
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="3" data-eid="10920-3" data-item-no="3"
+                                    data-description="Ausleger 0,15" data-qty="300.00" data-unit="m²"
+                                    data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    Ausleger 0,15 </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    3
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">300.00</span> / 300.00 m²
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="4" data-eid="10921-1" data-item-no="1"
+                                    data-description="Zulage Konsole innen" data-qty="100.00" data-unit="%"
+                                    data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    Zulage Konsole innen </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    1
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">100.00</span> / 100.00 %
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="5" data-eid="10921-2" data-item-no="2"
+                                    data-description="Bohlenabdeckung MIT UK umdecken" data-qty="300.00"
+                                    data-unit="m²" data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    Bohlenabdeckung MIT UK umdecken </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    2
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">300.00</span> / 300.00 m²
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="6" data-eid="10921-3" data-item-no="3"
+                                    data-description="FG 0-20 in LK 3" data-qty="500.00" data-unit="m³"
+                                    data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    FG 0-20 in LK 3 </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    3
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">500.00</span> / 500.00 m³
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kanban-item item" ondragstart="DragStart(event)" ondragend="removeClasswhenDragover()"  draggable="true" row-id="7" data-eid="10921-4" data-item-no="4"
+                                    data-description="Ausbau zum Fanggerüst" data-qty="250.00" data-unit="m"
+                                    data-color="#30B05E"
+                                    style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; font-size: 1em;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" style="font-weight: bold;">
+                                                    Ausbau zum Fanggerüst </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display: flex; align-items: center;">
+                                                    <div
+                                                        style="width: 12px; height: 12px; background-color: #30B05E; margin-right: 5px;">
+                                                    </div>
+                                                    4
+                                                </td>
+                                                <td style="text-align: right; color: #555;">
+                                                    <span class="remaining-qty">250.00</span> / 250.00 m
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="kanban-board">
+                            <div class="kanban-container">
+                                    <div data-id="board_454" data-order="1" class="kanban-board single_corner">
+                                        <header class="kanban-board-header info">
+                                            <div class="kanban-title-board">Border 1</div>
+                                        </header>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder1"   row-id="1"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder2"   row-id="2"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder3"   row-id="3"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder4"   row-id="4"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder5"   row-id="5"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder6"   row-id="6"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder7"   row-id="7"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder8"   row-id="8"></div>
+                                        <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder9"   row-id="9"></div>
+                                    </div>
+
+                                    
+                                <div data-id="board_454" data-order="1" class="kanban-board single_corner">
+                                    <header class="kanban-board-header info">
+                                        <div class="kanban-title-board">Border 2</div>
+                                    </header>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder10"   row-id="1"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder11"   row-id="2"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder12"   row-id="3"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder13"   row-id="4"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder14"   row-id="5"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder15"   row-id="6"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder16"   row-id="7"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder17"   row-id="8"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder18"   row-id="9"></div>
+                                </div>
+                                <div data-id="board_454" data-order="1" class="kanban-board single_corner">
+                                    <header class="kanban-board-header info">
+                                        <div class="kanban-title-board">Border 3</div>
+                                    </header>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder19"   row-id="1"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder20"   row-id="2"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder21"   row-id="3"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder22"   row-id="4"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder23"   row-id="5"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder24"   row-id="6"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder25"   row-id="7"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder26"   row-id="8"></div>
+                                    <div class="Drag-in-holder" corner-id="single_corenr1" id="Drag_holder27"   row-id="9"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="finalization_content" class="tab-pane fade">
+                    <h3>Finalization Content</h3>
+                    <p>Summary of finalized positions:</p>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Split Confirmation Modal -->
+        <div id="confirmationModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <h5 class="modal-title"><i class="fa fa-scissors fa-fw"></i> Split</h5>
+          </div>
+          <div class="modal-body">
+            <p>Amount</p>
+            <input type="number" id="splitAmount" class="form-control" placeholder="Enter amount">
+            <span id="unitLabel"></span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="cancelDrop" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="confirmDrop">Apply</button>
+          </div>
+        </div>
+        </div>
+        </div>
+
+        <script>
+
+
+            // // dont worry about this , we use it to get the kanban boards skip it for now
+            // function loadConstructionStages(projectNo) {
+            //     $.ajax({
+            //         url: '',
+            //         method: 'POST',
+            //         dataType: 'json',
+            //         data: { project_no: projectNo },
+            //         success: function (response) {
+            //             if (response && response.length > 0) {
+            //                 response.forEach(stage => {
+            //                     const boardId = `board_${stage.ID}`;
+            //                     kanban.addBoards([{
+            //                         id: boardId,
+            //                         title: stage.name || 'Unnamed Stage',
+            //                         class: 'info',
+            //                         item: []
+            //                     }]);
+            //                 });
+
+            //                 // Rebind drag/drop listeners after adding boards
+            //                 document.querySelectorAll('.kanban-drag').forEach(function (board) {
+            //                     board.addEventListener('dragover', function (e) {
+            //                         e.preventDefault(); // Allows dropping
+            //                     });
+
+            //                     board.addEventListener('drop', function (e) {
+            //                         e.preventDefault();
+            //                         var dataId = e.dataTransfer.getData('text/plain'); // Get dragged item's ID
+            //                         var draggedItem = $(`#remaining-items [data-eid="${dataId}"]`);
+            //                         if (!draggedItem) {
+            //                             alert("Error: Can't find the dragged item.");
+            //                             return;
+            //                         }
+
+            //                         // Show modal for confirmation
+            //                         confirmationModal.modal('show');
+            //                         confirmationModal.find('#splitAmount').val(draggedItem.data('qty')).attr('max', draggedItem.data('qty'));
+            //                         confirmationModal.find('#unitLabel').text(draggedItem.data('unit'));
+            //                         document.getElementById('confirmDrop').onclick = function () {
+            //                             var allocatedAmount = parseFloat(document.getElementById('splitAmount').value);
+            //                             if (allocatedAmount > 0) {
+            //                                 kanban.addElement(board.parentElement.dataset.id, {
+            //                                     id: `${dataId}-${Math.random().toString(36).substr(2, 9)}`,
+            //                                     title: generateKanbanCard(draggedItem, allocatedAmount)
+            //                                 });
+
+            //                                 updateRemainingQty(draggedItem, allocatedAmount);
+            //                                 confirmationModal.modal('hide');
+            //                             } else {
+            //                                 alert('Please enter a valid allocation.');
+            //                             }
+            //                         };
+            //                     });
+            //                 });
+            //             }
+            //         },
+            //         error: function (xhr, status, error) {
+            //             alert('Error fetching construction stages. Please try again.');
+            //             console.error('AJAX Error:', error);
+            //         }
+            //     });
+            // }
+
+          
+
+        </script>
+    </div>
+
+
+    <script>
+
+        //Duplicate selectors
+        let createOversizeItemBtn = $('#create-oversize-item-btn');
+
+        $('#sol-oversize-right-selector .sol-radio').click(function () {
+            if (createOversizeItemBtn.hasClass('blink') && createOversizeItemBtn.is(':visible')) {
+                return confirm("Warning, you have unsaved changes. Would you like to continue?");
+            }
+        });
+        $('a', '#project_tabs').click(function () {
+            if (createOversizeItemBtn.hasClass('blink') && createOversizeItemBtn.is(':visible')) {
+                return confirm("Warning, you have unsaved changes. Would you like to continue?");
+            }
+        });
+        $('#submit_edit').click(function () {
+            if (createOversizeItemBtn.hasClass('blink') && createOversizeItemBtn.is(':visible')) {
+                return confirm("Warning, you have unsaved changes. Would you like to continue?");
+            }
+        });
+        window.addEventListener("beforeunload", function (event) {
+            if (createOversizeItemBtn.hasClass('blink') && createOversizeItemBtn.is(':visible')) {
+                event.returnValue = "Warning, you have unsaved changes. Would you like to continue?";
+            }
+        });
+    </script>
+    <script src="JS/kanban.js"></script>
+    <script src="JS/main.js"></script>
+</div>
+
+</body>
+
+</html>
